@@ -46,7 +46,7 @@ export default function TicTacToe() {
             }
         }
          //check diagonal from left top to right bottom
-        if(board[0][0] != 0 && board[0][0] === board[1][1] && board[0][0] === board[2][2]){
+        if(board[0][0] !== 0 && board[0][0] === board[1][1] && board[0][0] === board[2][2]){
             setWinner(board[0][0]);
             return
         }

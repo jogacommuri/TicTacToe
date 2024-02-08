@@ -50,7 +50,8 @@ export default function TicTacToe() {
             return
         }
 
-        if(board[0][2] !== 0 && board[0][2] === board[1][1] && board[0][2] === board[2][2]){
+        if(board[0][2] !== 0 && board[0][2] === board[1][1] && board[0][2] === board[2][0]){
+            console.log("here")
             setWinner(board[0][2]);
             return
         }
@@ -95,7 +96,8 @@ export default function TicTacToe() {
                 ))}
         
         </div>
-       { winner && <span > winner is:  <bold>{winner === 1 ? 'A' : 'B'} </bold></span>}
+        { currentPlayer && <span > Current Player is:  <bold>{currentPlayer === 1 ? 'A' : 'B'} </bold></span>}
+        { winner && <span > winner is:  <bold>{winner === 1 ? 'A' : 'B'} </bold></span>}
         <button className='reset__board'  onClick={(e)=>handleResetBoard(e)}> RESET BOARD</button>
     </>
     

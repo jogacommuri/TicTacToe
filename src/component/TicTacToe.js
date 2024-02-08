@@ -5,10 +5,10 @@ export default function TicTacToe() {
     const [board , setBoard] = useState(value)
     const [currentPlayer, setCurrentPlayer] = useState(1);
     const [winner, setWinner] = useState(null);
-    console.log(board)
+    //console.log(board)
     
     const handleCellClick = (rowId,cellId) =>{
-        console.log("cell clicked", rowId,cellId);
+        //console.log("cell clicked", rowId,cellId);
         //board[[rowIdx][cellIdx]] = 1;
        // Adding logic to check the board and alternate players
         if(board[rowId][cellId] === 0){
@@ -31,25 +31,26 @@ export default function TicTacToe() {
 
     const checkGame = (board) =>{
         //to win the player has to complete 1 row 1 col or diagonal or draw
-
+        //check rows
         for(let i=0;i<board.length;i++){
             if(board[i][0] !==0 && board[i][0] === board[i][1] & board[i][0] === board[i][2]){
                 setWinner(board[i][0]);
                 return
             }
         }
-
+        //check cols
         for(let i=0;i<board.length;i++){
             if(board[0][i] !==0 && board[0][i] === board[1][i]& board[0][i] === board[2][i]){
                 setWinner(board[0][i])
                 return
             }
         }
+         //check diagonal from left top to right bottom
         if(board[0][0] != 0 && board[0][0] === board[1][1] && board[0][0] === board[2][2]){
             setWinner(board[0][0]);
             return
         }
-
+        //check diagonal from left bottom to right top
         if(board[0][2] !== 0 && board[0][2] === board[1][1] && board[0][2] === board[2][0]){
             console.log("here")
             setWinner(board[0][2]);
@@ -78,7 +79,7 @@ export default function TicTacToe() {
         setCurrentPlayer(1)
         setWinner(null)
     }
-    console.log("winner is: ",winner )
+    //console.log("winner is: ",winner )
   return (
     <>
         <div className='container'>

@@ -75,6 +75,7 @@ export default function TicTacToe() {
     const handleResetBoard = (e) =>{
 
         setBoard(value);
+        setCurrentPlayer(1)
         setWinner(null)
     }
     console.log("winner is: ",winner )
@@ -88,6 +89,7 @@ export default function TicTacToe() {
                                 key={cellIdx}
                                 className='cell'
                                 onClick={() => handleCellClick(rowIdx, cellIdx)}
+                                disabled={winner !== null}
                             >
                                 {cell === 0 ? '' : (cell === 1 ? 'A' : 'B')}
                             </button>
